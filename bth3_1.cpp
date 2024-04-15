@@ -9,6 +9,18 @@ int linearSearch ( int a[] , int n  ,  int k ){
 	if( i< n) return i ; 
 	else return -1 ; 
 }
+void linearSearch1 ( int a[] , int n  ,  int k ){
+	int count = 0 ;
+	for( int i = 0 ;  i< n ; i++){
+		if( a[i] == k ){
+			cout << "Vi tri trong day " <<i+1 <<endl ;
+			count ++ ; 
+		}
+	}
+	if( count == 0){
+		cout <<"Khong tim thay phan tu trong mang !" <<endl ; 
+	}
+}
 int main()
 {
 	int n,k ;  cout << "Nhap so luong phan tu cua day : " ;  cin >> n ; 

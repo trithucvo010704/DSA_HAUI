@@ -48,8 +48,7 @@ void sortByScore ( SV a[] , int n){
 int linearSearchwithNAME ( SV a[] , int n , string Name){
 	for( int i = 0 ;  i< n ; i++){
 		if( Name == lastName( a[i].hoten)) {
-			cout <<"Tim thay sinh vien !" <<endl;
-			cout <<"Thong tin sinh vien ay la : " <<endl ; 
+			return i ;
 		} 
 	}
 	return -1; 
@@ -57,9 +56,26 @@ int linearSearchwithNAME ( SV a[] , int n , string Name){
 int linearSearchwithScore ( SV a[] , int n , int diem ){
 	for( int i = 0 ; i< n ;  i++){
 	 	if(a[i].diem == diem){
-	 		cout << "Tim thay sinh vien !" <<endl ;			
+	 		cout << "Tim thay sinh vien !" <<endl ;	
+			return i ; 		
 		}
 	}
+	return -1; 
+}
+
+int binarySearch( SV a[] , int l , int r, int k ){
+	if( l> r) return -1; 
+	else {
+		int mid = (l+r) /2 ;
+		if( a[mid].diem == k){
+			return mid; 
+		}
+		else if ( a[mid].diem < k ){
+			binarySearch( a,mid+1, r , k) ; 
+		}
+		else binarySearch(a,l, mid-1, k); 
+	}
+	
 }
 int main(){
 	SV *a ; 
